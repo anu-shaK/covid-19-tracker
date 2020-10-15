@@ -1,6 +1,7 @@
 import axios from "axios"
 
 const url = "https://api.covid19api.com/summary"
+const URL = "https://api.covid19api.com"
 
 export const getData = async() => {
     try {
@@ -10,3 +11,13 @@ export const getData = async() => {
         console.log("Error", error)
     }
 }
+
+export const getCountries = async() => {
+    try {
+        const {data}= await axios.get(`${URL}/countries`);
+        return data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+

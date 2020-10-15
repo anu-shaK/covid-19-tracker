@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View} from 'react-native'
  import {getData} from "../api"
 
 export default function Totals() {
@@ -12,7 +12,6 @@ export default function Totals() {
         <View style={styles.container}>
             <Text style={styles.date}>{month},{day},{year}</Text>
             <Text style={styles.heading}>Total Cases</Text>
-           
         </View>
     )
 }
@@ -20,7 +19,6 @@ export default function Totals() {
 const styles = StyleSheet.create({
     container:{
         width: "90%",
-        height: "20%",
         backgroundColor: "white",
     },
     date:{
