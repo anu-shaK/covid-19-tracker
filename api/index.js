@@ -1,11 +1,10 @@
 import axios from "axios"
 
-const url = "https://api.covid19api.com/summary"
 const URL = "https://api.covid19api.com"
 
 export const getData = async() => {
     try {
-        const {data : {Countries}} = await axios.get(url);
+        const {data : {Countries}} = await axios.get(`${URL}/summary`);
         return Countries;
     } catch (error) {
         console.log("Error", error)

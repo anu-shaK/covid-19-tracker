@@ -1,17 +1,16 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { StyleSheet, Text, View} from 'react-native'
- import {getData} from "../api"
 
-export default function Totals() {
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
+
+export default function Totals({country}) {
+   
+    const date = new Date().toDateString();
 
     return (
         <View style={styles.container}>
-            <Text style={styles.date}>{month},{day},{year}</Text>
+            <Text style={styles.date}>{date}</Text>
             <Text style={styles.heading}>Total Cases</Text>
+            <Text style={styles.subHeading}>{country && country.TotalConfirmed}</Text>
         </View>
     )
 }
@@ -29,14 +28,15 @@ const styles = StyleSheet.create({
     },
     heading:{
         color: "black",
-        fontSize: 15,
+        fontSize: 18,
         paddingTop: 10,
         paddingLeft: 15,
+
     },
     subHeading:{
         fontWeight:"bold",
-        fontSize: 30,
-        paddingTop:10,
+        fontSize: 35,
+        paddingTop:5,
         paddingLeft: 15,
     }
 })

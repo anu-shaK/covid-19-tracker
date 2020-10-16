@@ -1,10 +1,11 @@
 import React from 'react';
 import {Text, View, StyleSheet} from "react-native"
 
-export default function Card({title}){
+export default function Card({title, color, data}){
     return(
         <View style={styles.container}>
             <Text style={styles.text}>{title}</Text>
+            <Text style={[styles.value, color={color}]}>{data}</Text>
         </View>
     );
 }
@@ -24,5 +25,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign:"center",
         padding: 20
+    },
+    value:{
+        fontWeight: "bold",
+        textAlign:"center",
+        fontSize: 28
     }
 })
