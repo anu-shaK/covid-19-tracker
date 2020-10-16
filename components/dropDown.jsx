@@ -28,10 +28,11 @@ export default function DropDown({onSelectCountry}) {
     },[])
 
         return (
-            <View>
+            <View style={styles.container}>
                 <Picker 
                 selectedValue={selectedValue}
                 style={styles.dropDown}
+                mode="dropdown"
                 onValueChange = {(value) => {setSelectedValue(value), onSelectCountry(value)}}
                 >
                 {countries && countries.map((country) => <Picker.Item key={country.ISO2} label={country.Country} value={country.Country}/>)}
@@ -44,7 +45,17 @@ export default function DropDown({onSelectCountry}) {
 }
 
 const styles = StyleSheet.create({
+    container:{
+        borderColor: "lightgray",
+        borderWidth: 0.25,
+        width: 300,
+        elevation: 10,
+        backgroundColor: "white",
+        marginBottom: 10
+    },
     dropDown:{
-        width: 200,
-    }
+        width: 300,
+        color: "black",
+    },
+   
 })
