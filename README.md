@@ -18,7 +18,7 @@ Covid 19 Tracker is an app for Android and iOS to spread awareness and help user
 - React Native
 - Expo
 - Axios
-- API
+- API : [https://api.covid19api.com/](https://api.covid19api.com/)
 
 
 	
